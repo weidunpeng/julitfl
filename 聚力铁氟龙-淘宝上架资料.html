@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚力铁氟龙 · 淘宝上架资料包</title>
+    <style>
+        :root {
+            --primary: #c62828;
+            --primary-light: #ffebee;
+            --bg: #f5f5f5;
+            --card: #ffffff;
+            --text: #202124;
+            --muted: #5f6368;
+            --border: #e0e0e0;
+            --accent: #ff6f00;
+            --accent-light: #fff8e1;
+            --tag-bg: #e8f5e9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        header {
+            background: linear-gradient(135deg, #c62828 0%, #8e0000 100%);
+            color: #fff;
+            padding: 36px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 1.6rem; margin-bottom: 4px; }
+        header p { font-size: 0.95rem; opacity: 0.85; }
+        .container { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
+        .company-bar {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .company-bar .name { font-weight: 700; color: var(--primary); font-size: 1rem; }
+        .company-bar .tel { color: var(--muted); font-size: 0.9rem; }
+        .company-bar .tel strong { color: var(--primary); }
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+            background: var(--card);
+            border-radius: 10px;
+            padding: 10px 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 8px;
+            z-index: 10;
+        }
+        .nav-tabs a {
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-weight: 500;
+            transition: all 0.15s;
+        }
+        .nav-tabs a:hover, .nav-tabs a.active {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title .badge {
+            font-size: 0.7rem;
+            background: var(--primary);
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+        }
+        .card h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: var(--tag-bg);
+            color: #2e7d32;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .title-box {
+            background: #f0f4ff;
+            border-left: 3px solid #1a73e8;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 10px;
+        }
+        .title-box .num {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 2px;
+        }
+        .title-box .text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a73e8;
+        }
+        .tip-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            margin-bottom: 14px;
+        }
+        .tip-box strong { color: var(--accent); }
+        .prompt-box {
+            background: #1e1e1e;
+            color: #f8f8f8;
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            overflow-x: auto;
+        }
+        .prompt-box .label {
+            color: #888;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .copy-btn {
+            display: inline-block;
+            padding: 4px 14px;
+            font-size: 0.78rem;
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+        .detail-text {
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        .qa-item {
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+        .qa-item:last-child { border-bottom: none; }
+        .qa-item q {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .qa-item a {
+            font-size: 0.88rem;
+            color: #444;
+            display: block;
+            margin-top: 4px;
+        }
+        .sku-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .sku-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+        }
+        .sku-card .sku-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .sku-card .sku-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 4px 0;
+        }
+        .sku-card .sku-desc {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+        .sku-card .sku-label {
+            font-size: 0.72rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .notice-box {
+            background: var(--card);
+            border: 2px dashed var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .notice-box h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
+        .notice-box p { font-size: 0.88rem; color: #555; }
+        .notice-box .big-tel {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 8px 0;
+        }
+        .flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .flow-step {
+            background: var(--tag-bg);
+            color: #2e7d32;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.2rem; }
+            .nav-tabs { overflow-x: auto; flex-wrap: nowrap; }
+            .sku-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📦 聚力铁氟龙 · 淘宝上架资料包</h1>
+    <p>食品级铁氟龙喷涂 · 涂层翻新 · 来料加工 · 全套上架物料</p>
+</header>
+
+<div class="container">
+
+    <div class="company-bar">
+        <div>
+            <div class="name">🏭 聚力铁氟龙智能科技（佛山）有限公司</div>
+            <div class="tel">📍 广东佛山 · 全国来料加工</div>
+        </div>
+        <div class="tel">📞 <strong>13016610148</strong>（电话/微信）</div>
+    </div>
+
+    <div class="nav-tabs">
+        <a href="#titles" class="active">📝 标题</a>
+        <a href="#images">🖼️ 图片方案</a>
+        <a href="#detail">📄 详情页</a>
+        <a href="#sku">💰 SKU定价</a>
+        <a href="#qa">❓ 常见问题</a>
+        <a href="#notice">📢 店铺公告</a>
+    </div>
+
+    <!-- ==================== 标题 ==================== -->
+    <div class="section" id="titles">
+        <div class="section-title">📝 商品标题 <span class="badge">5条 · 直接复制</span></div>
+        <div class="tip-box">
+            <strong>💡 建议：</strong>一次性上架3-5个链接，每条标题稍微不同，
+            覆盖更多搜索词。优先使用标题1。
+        </div>
+
+        <div class="title-box">
+            <div class="num">标题 1 ★ 最推荐</div>
+            <div class="text">食品级铁氟龙喷涂 锅具涂层翻新 不粘锅特氟龙重新喷涂 来料加工服务</div>
+        </div>
+        <div class="title-box">
+            <div class="num">标题 2</div>
+            <div class="text">铁氟龙食品级涂层翻喷 特氟龙不粘层修复 旧锅翻新喷涂加工 佛山厂家</div>
+        </div>
+        <div class="title-box">
+            <div class="num">标题 3</div>
+            <div class="text">食品级PTFE涂层翻新 铁氟龙锅具修复 不粘锅重新做涂层 来料喷涂加工</div>
+        </div>
+        <div class="title-box">
+            <div class="num">标题 4</div>
+            <div class="text">铁氟龙喷涂加工 食品级特氟龙涂层 锅具烤盘模具翻新 专业喷涂服务</div>
+        </div>
+        <div class="title-box">
+            <div class="num">标题 5</div>
+            <div class="text">不粘锅涂层修复 铁氟龙翻喷加工 PTFE食品级喷涂 来料定制定做涂层</div>
+        </div>
+    </div>
+
+    <!-- ==================== 图片方案 ==================== -->
+    <div class="section" id="images">
+        <div class="section-title">🖼️ 即梦AI绘图提示词 <span class="badge">4组 · 中英文</span></div>
+        <div class="tip-box">
+            <strong>📌 操作：</strong>复制提示词到即梦AI生成图片 → 美图秀秀加文字 → 用作主图/详情图。<br>
+            生成尺寸选 <strong>1:1</strong>（正方形）或 <strong>3:4</strong>（竖版）。
+        </div>
+
+        <div class="card">
+            <h3>🅰 主图1 · 翻新前后对比图 <span class="tag">最重要</span></h3>
+            <div class="prompt-box">
+                <span class="label">🇨🇳 中文提示词</span>
+                一张产品对比图，左边是一口旧不粘锅，锅底发黄有划痕涂层脱落，右边是同款锅具翻新后，表面乌黑光滑如新的铁氟龙涂层。中间有横向箭头标注"翻新前后"，底部有"食品级铁氟龙涂层翻新"文字。白色背景，产品摄影风格，清晰锐利。
+            </div>
+            <div class="prompt-box">
+                <span class="label">🇬🇧 英文提示词</span>
+                Product comparison photo, left side old worn non-stick pan with yellow stains and scratched peeling coating, right side the same pan after Teflon recoating, brand new black smooth surface. Arrow between labeled "Before & After". White background, commercial product photography, sharp detail, realistic.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🅱 主图2 · 工艺展示图</h3>
+            <div class="prompt-box">
+                <span class="label">🇨🇳 中文提示词</span>
+                俯拍视角，工人手持喷枪正在给一个圆形锅具均匀喷涂黑色铁氟龙涂层，雾状喷涂效果可见，操作台整洁专业，暖色灯光，工业风摄影，画质清晰有质感。
+            </div>
+            <div class="prompt-box">
+                <span class="label">🇬🇧 英文提示词</span>
+                Top-down view of Teflon coating spraying, worker's hand holding spray gun coating a round pan with black PTFE material, mist spray effect visible, clean workstation, warm lighting, industrial photography, sharp detail.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🅲 主图3 · 食品级安全展示</h3>
+            <div class="prompt-box">
+                <span class="label">🇨🇳 中文提示词</span>
+                食品级安全概念图，白色陶瓷锅具周围环绕绿色食品安全认证图标、对勾标志、叶子元素，底部有"食品级PTFE·安心涂层"文字。简洁干净，商业插画风，白色背景。
+            </div>
+            <div class="prompt-box">
+                <span class="label">🇬🇧 英文提示词</span>
+                Food safety concept image, white ceramic pan surrounded by green food safety icons, checkmarks, leaf elements, text "Food Grade PTFE Safe Coating". Clean commercial illustration, white background.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🅳 详情图 · 应用场景</h3>
+            <div class="prompt-box">
+                <span class="label">🇨🇳 中文提示词</span>
+                一组铁氟龙喷涂应用场景展示：家庭厨房中的不粘锅、食品工厂中的烤盘模具、工业五金零件，三种场景排列展示，白底干净商业图风格。
+            </div>
+            <div class="prompt-box">
+                <span class="label">🇬🇧 英文提示词</span>
+                Set of Teflon coating applications: non-stick pan in kitchen, baking molds in food factory, industrial metal parts, three scenarios arranged, white background, clean commercial style.
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 详情页 ==================== -->
+    <div class="section" id="detail">
+        <div class="section-title">📄 详情页文案 <span class="badge">可直接粘贴</span></div>
+
+        <div class="card">
+            <h3>📌 公司介绍</h3>
+            <div class="detail-text">聚力铁氟龙智能科技（佛山）有限公司，专业从事铁氟龙（特氟龙/PTFE）喷涂加工服务，专注食品级涂层应用。
+
+服务范围：佛山 · 广东 · 全国（可寄件加工）
+电话/微信：13016610148</div>
+        </div>
+
+        <div class="card">
+            <h3>🔧 服务项目</h3>
+            <div class="detail-text">✔ 食品级铁氟龙涂层翻新（旧锅/旧烤盘/旧模具重新喷涂）
+✔ 不粘锅涂层修复翻喷
+✔ 食品机械烤盘/托盘喷涂
+✔ 五金模具铁氟龙涂层加工
+✔ 来料定制定做涂层</div>
+        </div>
+
+        <div class="card">
+            <h3>🎯 适用对象</h3>
+            <div class="detail-text"><strong>【食品行业】</strong>
+家用不粘锅 · 商用炒锅 · 烘焙烤盘 · 模具托盘 · 食品机械配件
+
+<strong>【工业行业】</strong>
+五金模具 · 电子零件 · 化工设备 · 纺织零件 · 橡胶模具</div>
+        </div>
+
+        <div class="card">
+            <h3>🏭 工艺流程</h3>
+            <div class="flow-steps">
+                <span class="flow-step">① 来料接收</span>
+                <span class="flow-step">② 除油清洗</span>
+                <span class="flow-step">③ 喷砂粗化</span>
+                <span class="flow-step">④ 喷涂底漆</span>
+                <span class="flow-step">⑤ 喷涂面漆</span>
+                <span class="flow-step">⑥ 高温烧结</span>
+                <span class="flow-step">⑦ 冷却质检</span>
+                <span class="flow-step">⑧ 包装发货</span>
+            </div>
+            <div class="detail-text" style="margin-top: 10px;">
+⏱ 工期：一般3-5个工作日（视数量而定）
+📦 发货：顺丰/德邦寄回</div>
+        </div>
+
+        <div class="card">
+            <h3>✅ 为什么选择我们</h3>
+            <div class="detail-text">✅ 食品级原料——采用食品级PTFE涂料，符合食品安全标准
+✅ 专业工艺——高温烧结固化，涂层附着力强，不脱落
+✅ 翻新如新——旧锅翻新后效果接近全新，成本仅为新锅1/3
+✅ 来料加工——您寄件，我们喷涂，快递发回，全国服务
+✅ 佛山厂家——实体工厂，支持上门看样</div>
+        </div>
+
+        <div class="card">
+            <h3>⚠️ 客户须知（重要）</h3>
+            <div class="detail-text">⚡ 本店提供的是【来料喷涂加工服务】，并非成品锅具销售。您需要将待喷涂的工件寄给我们，我们加工后寄回。
+
+⚡ 快递费：来程您付，回程我们承担。
+
+⚡ 翻新效果取决于基材状况，严重变形/穿孔的工件可能无法翻新。建议下单前先拍照联系客服确认。
+
+⚡ 量大可优惠，批量喷涂欢迎咨询。</div>
+        </div>
+    </div>
+
+    <!-- ==================== SKU定价 ==================== -->
+    <div class="section" id="sku">
+        <div class="section-title">💰 SKU定价方案 <span class="badge">4档</span></div>
+        <div class="tip-box">
+            <strong>💡 策略：</strong>首单用低价引流（¥30-50体验价），积累评价后再恢复正常价。
+        </div>
+        <div class="sku-grid">
+            <div class="sku-card">
+                <div class="sku-name">🟢 小型工件</div>
+                <div class="sku-price">¥50-80</div>
+                <div class="sku-desc">家用锅、小烤盘</div>
+                <div class="sku-label">首单体验 ¥30-50</div>
+            </div>
+            <div class="sku-card">
+                <div class="sku-name">🟡 中型工件</div>
+                <div class="sku-price">¥80-150</div>
+                <div class="sku-desc">商用烤盘、中型模具</div>
+            </div>
+            <div class="sku-card">
+                <div class="sku-name">🔴 大型工件</div>
+                <div class="sku-price">¥150-300</div>
+                <div class="sku-desc">大型模具、工业零件</div>
+            </div>
+            <div class="sku-card">
+                <div class="sku-name">📦 批量喷涂</div>
+                <div class="sku-price">量大优惠</div>
+                <div class="sku-desc">10件以上联系客服</div>
+                <div class="sku-label">联系客服报价</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FAQ ==================== -->
+    <div class="section" id="qa">
+        <div class="section-title">❓ 常见问题 <span class="badge">6条</span></div>
+        <div class="card">
+            <div class="qa-item">
+                <q>Q：什么锅可以翻新？</q>
+                <a>铁锅、铝锅、不锈钢锅、碳钢锅均可。只要锅体结构完好即可翻新。</a>
+            </div>
+            <div class="qa-item">
+                <q>Q：翻新后能用多久？</q>
+                <a>正常使用下1-2年，避免使用金属铲和钢丝球可延长寿命。</a>
+            </div>
+            <div class="qa-item">
+                <q>Q：食品级安全吗？</q>
+                <a>我们采用食品级PTFE涂料，符合国家食品安全标准，安全无毒。</a>
+            </div>
+            <div class="qa-item">
+                <q>Q：我只寄一个锅运费怎么算？</q>
+                <a>一个锅全程运费约20-30元（来回），具体请咨询客服。</a>
+            </div>
+            <div class="qa-item">
+                <q>Q：加工周期多久？</q>
+                <a>收到工件后一般3-5个工作日发出。</a>
+            </div>
+            <div class="qa-item">
+                <q>Q：怎么下单？</q>
+                <a>拍下对应SKU → 联系客服获取寄件地址 → 寄出工件 → 我们加工 → 质检发货 → 您收货</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 店铺公告 ==================== -->
+    <div class="section" id="notice">
+        <div class="section-title">📢 店铺公告</div>
+        <div class="notice-box">
+            <h3>🏭 聚力铁氟龙智能科技（佛山）有限公司</h3>
+            <p>专业食品级铁氟龙喷涂 · 来料加工 · 全国服务</p>
+            <div class="big-tel">📞 13016610148</div>
+            <p>⏰ 营业时间：周一至周日 8:00-18:00</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: var(--muted);">
+                寄件前请先联系客服确认工艺和报价
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    聚力铁氟龙智能科技（佛山）有限公司 · 电话/微信 13016610148<br>
+    文件保存于 D:\36\聚力铁氟龙-淘宝上架资料.html · 双击浏览器打开
+</footer>
+
+</body>
+</html>
