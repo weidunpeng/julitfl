@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聚力铁氟龙智能科技 — 铁氟龙喷涂 · 平台导航</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --accent: #e8f0fe;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #202124;
+            --muted: #5f6368;
+            --border: #dadce0;
+            --brand: #c62828;
+            --brand-light: #ffebee;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #c62828 0%, #8e0000 100%);
+            color: #fff;
+            padding: 40px 20px 32px;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 4px; }
+        header .company-name { font-size: 1.1rem; opacity: 0.95; margin-bottom: 12px; font-weight: 500; }
+        header p { font-size: 0.95rem; opacity: 0.85; }
+        .company-bar { max-width: 1100px; margin: -24px auto 24px; padding: 0 16px; position: relative; z-index: 2; }
+        .company-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            align-items: center;
+        }
+        .company-card .info { flex: 1; min-width: 200px; }
+        .company-card .info h2 { font-size: 1.1rem; color: var(--brand); margin-bottom: 2px; }
+        .company-card .info .detail { font-size: 0.85rem; color: var(--muted); }
+        .company-card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .company-card .actions a {
+            display: inline-block; padding: 8px 20px; border-radius: 6px;
+            text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: opacity 0.15s;
+        }
+        .company-card .actions a:hover { opacity: 0.85; }
+        .btn-primary { background: var(--brand); color: #fff; }
+        .btn-outline { border: 2px solid var(--brand); color: var(--brand); background: transparent; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 16px 24px; }
+        .stats-bar {
+            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+            background: var(--card); border-radius: 12px; padding: 20px;
+            margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .stat-item { text-align: center; }
+        .stat-num { font-size: 1.8rem; font-weight: 700; color: var(--brand); }
+        .stat-label { font-size: 0.85rem; color: var(--muted); }
+        .category { margin-bottom: 36px; }
+        .category h2 {
+            font-size: 1.25rem; padding-bottom: 10px; border-bottom: 2px solid var(--brand);
+            margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
+        .category h2 .badge {
+            font-size: 0.75rem; background: var(--brand); color: #fff;
+            padding: 2px 10px; border-radius: 12px; font-weight: 500;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+        .card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 18px; transition: box-shadow 0.2s, transform 0.15s;
+        }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        .card h3 { font-size: 1rem; margin-bottom: 4px; }
+        .card h3 a { color: var(--primary); text-decoration: none; }
+        .card h3 a:hover { text-decoration: underline; }
+        .card .url { font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
+        .card p { font-size: 0.88rem; color: #444; margin-bottom: 8px; }
+        .card .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .card .tags span {
+            font-size: 0.75rem; padding: 2px 10px; border-radius: 4px; font-weight: 500;
+        }
+        .tag-hot { background: #fce4ec; color: #c62828; }
+        .tag-recommend { background: #e8f5e9; color: #2e7d32; }
+        .tag-free { background: #e8f5e9; color: #2e7d32; }
+        .tag-paid { background: #e8eaf6; color: #283593; }
+        .tag-done { background: #e0f2f1; color: #00695c; }
+        .tip-box {
+            background: #fff8e1; border-left: 4px solid #f9a825;
+            padding: 16px 18px; border-radius: 8px; margin-bottom: 28px; font-size: 0.9rem;
+        }
+        .tip-box strong { color: #e65100; }
+        .checklist {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin-bottom: 28px;
+        }
+        .checklist h3 { font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+        .checklist ol { padding-left: 20px; font-size: 0.88rem; color: #444; }
+        .checklist ol li { margin-bottom: 6px; }
+        footer {
+            text-align: center; padding: 32px 20px;
+            color: var(--muted); font-size: 0.85rem;
+        }
+        footer .brand { color: var(--brand); font-weight: 500; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.3rem; }
+            .grid { grid-template-columns: 1fr; }
+            .company-card { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🛡️ 铁氟龙喷涂 · 注册推广平台导航</h1>
+    <div class="company-name">聚力铁氟龙智能科技（佛山）有限公司</div>
+    <p>一站式收录主流平台，方便客户找到我们</p>
+</header>
+
+<div class="company-bar">
+    <div class="company-card">
+        <div class="info">
+            <h2>🏢 聚力铁氟龙智能科技（佛山）有限公司</h2>
+            <div class="detail">📍 广东·佛山 ｜ 🔧 铁氟龙喷涂 · PTFE涂层 · 不粘涂层 · 特氟龙喷涂 ｜ 📞 13016610148 ｜ 💬 微信同号</div>
+        </div>
+        <div class="actions">
+            <a href="#platforms" class="btn-primary">📋 平台列表</a>
+            <a href="https://www.baidu.com/s?wd=%E8%81%9A%E5%8A%9B%E9%93%81%E6%B0%9F%E9%BE%99%E6%99%BA%E8%83%BD%E7%A7%91%E6%8A%80%E4%BD%9B%E5%B1%B1" target="_blank" class="btn-outline">🔍 百度搜索</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-num">50</div><div class="stat-label">收录平台</div></div>
+        <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">分类</div></div>
+        <div class="stat-item"><div class="stat-num">🔥</div><div class="stat-label">优先注册</div></div>
+    </div>
+
+    <div class="tip-box">
+        <strong>💡 注册核心信息：</strong><br>
+        <strong>公司名称：</strong>聚力铁氟龙智能科技（佛山）有限公司<br>
+        <strong>注册关键词（全部写上）：</strong>铁氟龙喷涂 · 特氟龙喷涂 · PTFE涂层 · 不粘涂层 · 四氟喷涂 · 铁氟龙加工 · 佛山铁氟龙喷涂 · 广东铁氟龙喷涂 · 高温喷涂 · 防粘涂层<br>
+        <strong>统一文案模板：</strong>聚力铁氟龙智能科技（佛山）有限公司，专业提供铁氟龙/特氟龙/PTFE喷涂加工服务，应用于五金、模具、电子、食品机械等行业。电话/微信：13016610148，欢迎询价！
+    </div>
+
+    <div class="checklist">
+        <h3>✅ 注册进度清单（8个优先注册）</h3>
+        <ol>
+            <li>☐ 1688.com — 免费入驻，流量最大</li>
+            <li>☐ 阿里巴巴国际站 — 可接外贸订单</li>
+            <li>☐ 慧聪网 — 免费会员即可注册</li>
+            <li>☐ 百度爱采购 — 效果最好，约¥3680/年</li>
+            <li>☐ 百度地图 + 高德地图 — 免费标注，本地客户直接搜到</li>
+            <li>☐ 58同城 — 免费发帖推广</li>
+            <li>☐ 抖音/快手/小红书 — 发喷涂工艺视频</li>
+            <li>☐ 百度知道 + 知乎 — 回答问题留联系方式</li>
+        </ol>
+    </div>
+
+    <a id="platforms" style="scroll-margin-top: 20px;"></a>
+
+    <!-- 综合B2B -->
+    <div class="category">
+        <h2>🌐 综合 B2B 平台 <span class="badge">14 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.1688.com" target="_blank" rel="noopener">1688.com → 注册聚力铁氟龙</a></h3>
+                <div class="url">1688.com</div>
+                <p>阿里巴巴旗下国内批发平台，流量最大，工业品采购主战场。</p>
+                <div class="tags"><span class="tag-hot">🔥 首选</span><span class="tag-recommend">免费入驻</span><span class="tag-paid">诚信通 ¥6688/年</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.alibaba.com" target="_blank" rel="noopener">Alibaba.com → 外贸接单</a></h3>
+                <div class="url">alibaba.com</div>
+                <p>阿里巴巴国际站，面向海外客户，佛山企业可接外贸铁氟龙喷涂订单。</p>
+                <div class="tags"><span class="tag-hot">🔥 首选</span><span class="tag-recommend">免费入驻</span><span class="tag-paid">金品诚企 ~¥29800/年</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.hc360.com" target="_blank" rel="noopener">慧聪网 (hc360.com)</a></h3>
+                <div class="url">hc360.com</div>
+                <p>老牌B2B，工业品、五金、化工类买家占比高。免费会员可用。</p>
+                <div class="tags"><span class="tag-hot">🔥 推荐</span><span class="tag-free">免费会员</span><span class="tag-paid">标王 ¥3800/年</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.made-in-china.com" target="_blank" rel="noopener">中国制造网 (Made-in-China)</a></h3>
+                <div class="url">made-in-china.com</div>
+                <p>国内+外贸双平台，制造业采购商集中。</p>
+                <div class="tags"><span class="tag-free">免费会员</span><span class="tag-paid">钻石会员 ~¥6000/年</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://b2b.baidu.com" target="_blank" rel="noopener">百度爱采购（b2b.baidu.com）</a></h3>
+                <div class="url">b2b.baidu.com</div>
+                <p>百度官方B2B，搜索结果直接展示。佛山企业入驻效果显著。</p>
+                <div class="tags"><span class="tag-hot">🔥 流量大</span><span class="tag-paid">约 ¥3680/年</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.china.cn" target="_blank" rel="noopener">中国供应商 (china.cn)</a></h3>
+                <div class="url">china.cn</div>
+                <p>国家背景B2B平台，百度搜索权重不错。</p>
+                <div class="tags"><span class="tag-free">免费注册</span><span class="tag-recommend">SEO友好</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.youboy.com" target="_blank" rel="noopener">搜了网 (youboy.com)</a></h3>
+                <div class="url">youboy.com</div>
+                <p>B2B供求平台，搜索排名好，免费+付费会员。</p>
+                <div class="tags"><span class="tag-free">免费注册</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.maigoo.com" target="_blank" rel="noopener">买购网 (maigoo.com)</a></h3>
+                <div class="url">maigoo.com</div>
+                <p>品牌排行榜网站，适合注册品牌词推广。</p>
+                <div class="tags"><span class="tag-free">免费注册</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.gys.cn" target="_blank" rel="noopener">供应商网 (gys.cn)</a></h3>
+                <div class="url">gys.cn</div>
+                <p>企业黄页+B2B，百度搜索表现不错。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.qianzhan.com" target="_blank" rel="noopener">前瞻网 (qianzhan.com)</a></h3>
+                <div class="url">qianzhan.com</div>
+                <p>工业品采购平台，五金机械类目覆盖好。</p>
+                <div class="tags"><span class="tag-free">免费注册</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.11467.com" target="_blank" rel="noopener">顺企网 (11467.com)</a></h3>
+                <div class="url">11467.com</div>
+                <p>企业名录+黄页平台，百度排名不错，免费发公司信息。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.china-10.com" target="_blank" rel="noopener">商国互联网 (china-10.com)</a></h3>
+                <div class="url">china-10.com</div>
+                <p>B2B平台，工业企业展示，免费注册。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.b2b168.com" target="_blank" rel="noopener">黄页88 (b2b168.com)</a></h3>
+                <div class="url">b2b168.com</div>
+                <p>混合型黄页+B2B，百度搜索权重好。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.go4worldbusiness.com" target="_blank" rel="noopener">Go4WorldBusiness</a></h3>
+                <div class="url">go4worldbusiness.com</div>
+                <p>国际B2B平台，可接海外询盘，免费注册。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 本地生活&地图 -->
+    <div class="category">
+        <h2>📍 本地生活 & 地图 <span class="badge">7 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.58.com" target="_blank" rel="noopener">58同城 → 佛山推广</a></h3>
+                <div class="url">58.com</div>
+                <p>本地生活服务平台，发"聚力铁氟龙喷涂"推广帖，佛山本地客户可见。</p>
+                <div class="tags"><span class="tag-hot">🔥 推荐</span><span class="tag-free">免费发帖</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.ganji.com" target="_blank" rel="noopener">赶集网 (ganji.com)</a></h3>
+                <div class="url">ganji.com</div>
+                <p>类似58，本地服务分类信息平台。</p>
+                <div class="tags"><span class="tag-free">免费发帖</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://lbsyun.baidu.com" target="_blank" rel="noopener">百度地图 → 标注聚力位置</a></h3>
+                <div class="url">lbsyun.baidu.com</div>
+                <p>免费标注「聚力铁氟龙智能科技」在佛山的位置，用户搜"佛山铁氟龙喷涂"直接展示。</p>
+                <div class="tags"><span class="tag-hot">🔥 必做</span><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://ditu.amap.com" target="_blank" rel="noopener">高德地图 → 标注聚力位置</a></h3>
+                <div class="url">ditu.amap.com</div>
+                <p>免费标注，覆盖阿里系流量，本地搜索重要入口。</p>
+                <div class="tags"><span class="tag-hot">🔥 必做</span><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://map.qq.com" target="_blank" rel="noopener">腾讯地图 → 标注聚力位置</a></h3>
+                <div class="url">map.qq.com</div>
+                <p>免费标注企业位置，微信生态搜索会用到。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.dianping.com" target="_blank" rel="noopener">大众点评 (dianping.com)</a></h3>
+                <div class="url">dianping.com</div>
+                <p>本地生活平台，用户可搜到你的服务，适合佛山本地获客。</p>
+                <div class="tags"><span class="tag-free">免费入驻</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.meituan.com" target="_blank" rel="noopener">美团 (meituan.com)</a></h3>
+                <div class="url">meituan.com</div>
+                <p>本地生活+企业服务，工业服务类也可入驻展示。</p>
+                <div class="tags"><span class="tag-free">免费入驻</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 行业垂直 -->
+    <div class="category">
+        <h2>⚙️ 行业垂直平台 <span class="badge">10 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.cnclm.com" target="_blank" rel="noopener">中国涂装网 (cnclm.com)</a></h3>
+                <div class="url">cnclm.com</div>
+                <p>涂装/喷涂行业专业平台，对口铁氟龙喷涂。</p>
+                <div class="tags"><span class="tag-hot">🔥 对口</span><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.wxftmc.com" target="_blank" rel="noopener">外协加工网 (wxftmc.com)</a></h3>
+                <div class="url">wxftmc.com</div>
+                <p>专注外协加工/表面处理交易撮合，对口铁氟龙喷涂。</p>
+                <div class="tags"><span class="tag-hot">🔥 对口</span><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.mfcad.com" target="_blank" rel="noopener">沐风网 (mfcad.com)</a></h3>
+                <div class="url">mfcad.com</div>
+                <p>机械/模具/加工类平台，可接铁氟龙喷涂外协需求。</p>
+                <div class="tags"><span class="tag-free">免费注册</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.jc35.com" target="_blank" rel="noopener">机床商务网 (jc35.com)</a></h3>
+                <div class="url">jc35.com</div>
+                <p>五金/机械/加工类平台，可接喷涂外协需求。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.99114.com" target="_blank" rel="noopener">万商网 (99114.com)</a></h3>
+                <div class="url">99114.com</div>
+                <p>工业品B2B，五金/机械/化工类目。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.coatings.hc360.com" target="_blank" rel="noopener">慧聪涂料网 (coatings.hc360.com)</a></h3>
+                <div class="url">coatings.hc360.com</div>
+                <p>慧聪涂料/涂层行业垂直频道。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.chinacomposites.com.cn" target="_blank" rel="noopener">中国复合材料网</a></h3>
+                <div class="url">chinacomposites.com.cn</div>
+                <p>与涂层/复合材料相关的专业平台。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.epoxy.cn" target="_blank" rel="noopener">中国环氧树脂网 (epoxy.cn)</a></h3>
+                <div class="url">epoxy.cn</div>
+                <p>环氧/涂层行业上下游网站。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.chem17.com" target="_blank" rel="noopener">化工仪器网 (chem17.com)</a></h3>
+                <div class="url">chem17.com</div>
+                <p>化工/材料类平台，PTFE涂层相关。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.hisupplier.com" target="_blank" rel="noopener">HiSupplier (hisupplier.com)</a></h3>
+                <div class="url">hisupplier.com</div>
+                <p>外贸B2B，制造业/加工类采购商多。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 企业黄页 -->
+    <div class="category">
+        <h2>📋 企业黄页 & 工商信息 <span class="badge">5 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.tianyancha.com" target="_blank" rel="noopener">天眼查 (tianyancha.com)</a></h3>
+                <div class="url">tianyancha.com</div>
+                <p>采购商查公司会看到聚力铁氟龙的信息，完善资料后自动展示。</p>
+                <div class="tags"><span class="tag-free">免费认领</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.qichacha.com" target="_blank" rel="noopener">企查查 (qichacha.com)</a></h3>
+                <div class="url">qichacha.com</div>
+                <p>类似天眼查，企业信息展示平台。</p>
+                <div class="tags"><span class="tag-free">免费认领</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.qixin.com" target="_blank" rel="noopener">启信宝 (qixin.com)</a></h3>
+                <div class="url">qixin.com</div>
+                <p>工商信息平台，认领后可展示联系方式和产品。</p>
+                <div class="tags"><span class="tag-free">免费认领</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.yellowpage.com.cn" target="_blank" rel="noopener">大黄页 (yellowpage.com.cn)</a></h3>
+                <div class="url">yellowpage.com.cn</div>
+                <p>企业黄页平台，免费注册聚力铁氟龙信息。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.114hlw.com" target="_blank" rel="noopener">114互联网 (114hlw.com)</a></h3>
+                <div class="url">114hlw.com</div>
+                <p>企业黄页，简单注册展示公司信息。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 短视频&新媒体 -->
+    <div class="category">
+        <h2>📱 短视频 & 新媒体 <span class="badge">5 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.douyin.com" target="_blank" rel="noopener">抖音 → 聚力铁氟龙推广</a></h3>
+                <div class="url">douyin.com</div>
+                <p>发布喷涂工艺视频、客户案例，打上 #铁氟龙喷涂 #佛山喷涂 标签引流。</p>
+                <div class="tags"><span class="tag-hot">🔥 强力推荐</span><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.kuaishou.com" target="_blank" rel="noopener">快手 (kuaishou.com)</a></h3>
+                <div class="url">kuaishou.com</div>
+                <p>类似抖音，下沉市场流量大，适合佛山本地推广。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.xiaohongshu.com" target="_blank" rel="noopener">小红书 (xiaohongshu.com)</a></h3>
+                <div class="url">xiaohongshu.com</div>
+                <p>发布铁氟龙喷涂知识、工艺对比、客户案例，搜索流量不错。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.bilibili.com" target="_blank" rel="noopener">B站 (bilibili.com)</a></h3>
+                <div class="url">bilibili.com</div>
+                <p>发布喷涂技术教程型视频，吸引技术类采购者。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.ixigua.com" target="_blank" rel="noopener">西瓜视频 (ixigua.com)</a></h3>
+                <div class="url">ixigua.com</div>
+                <p>发布长视频工艺展示，可挂载联系方式。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 搜索引擎&问答 -->
+    <div class="category">
+        <h2>🔍 搜索引擎 & 问答平台 <span class="badge">5 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.baidu.com/s?wd=%E8%81%9A%E5%8A%9B%E9%93%81%E6%B0%9F%E9%BE%99%E6%99%BA%E8%83%BD%E7%A7%91%E6%8A%80%E4%BD%9B%E5%B1%B1" target="_blank" rel="noopener">百度商户中心 → 认领聚力</a></h3>
+                <div class="url">baidu.com</div>
+                <p>免费认领企业，搜索"佛山铁氟龙喷涂"直接展示聚力联系方式。</p>
+                <div class="tags"><span class="tag-hot">🔥 必做</span><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://zhidao.baidu.com" target="_blank" rel="noopener">百度知道</a></h3>
+                <div class="url">zhidao.baidu.com</div>
+                <p>回答"佛山铁氟龙喷涂哪里做"类问题，留"聚力铁氟龙"名称和联系方式。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.zhihu.com" target="_blank" rel="noopener">知乎 (zhihu.com)</a></h3>
+                <div class="url">zhihu.com</div>
+                <p>回答"铁氟龙喷涂工艺"相关问题，建立专业形象，引流到聚力。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.sogou.com" target="_blank" rel="noopener">搜狗企业认证</a></h3>
+                <div class="url">sogou.com</div>
+                <p>搜狗搜索+微信搜一搜，认领聚力铁氟龙企业展示。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+            <div class="card">
+                <h3><a href="https://www.360.cn" target="_blank" rel="noopener">360企业认证</a></h3>
+                <div class="url">360.cn</div>
+                <p>360搜索+企业展示平台。</p>
+                <div class="tags"><span class="tag-free">免费</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 外贸&国际 -->
+    <div class="category">
+        <h2>🌍 外贸 & 国际平台 <span class="badge">5 个</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3><a href="https://www.tradeindia.com" target="_blank" rel="noopener">TradeIndia</a></h3>
+                <div class="url">tradeindia.com</div>
+                <p>印度最大
